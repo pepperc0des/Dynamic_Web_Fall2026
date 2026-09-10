@@ -1,10 +1,11 @@
 import { RECIPE_DATA } from "./recipe-data.js";
+import styles from "./RecipeCard.module.css";
 
 const RecipeInfo = () => {
   return (
-    <div className="recipe_info">
-      <h2 className="recipe_title">{RECIPE_DATA.title}</h2>
-      <p className="recipe_description">{RECIPE_DATA.description}</p>
+    <div className={styles.recipe_info}>
+      <h2 className={styles.recipe_title}>{RECIPE_DATA.title}</h2>
+      <p className={styles.recipe_description}>{RECIPE_DATA.description}</p>
     </div>
   );
 };

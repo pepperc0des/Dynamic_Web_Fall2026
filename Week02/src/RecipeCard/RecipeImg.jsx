@@ -1,11 +1,12 @@
 import { RECIPE_DATA } from "./recipe-data.js";
+import styles from "./RecipeCard.module.css";
 
 const RecipeImg = (props) => {
   //destructuring props to get imgSrc and imgAlt
   const { imgSrc, imgAlt } = props;
   //  const imgSrc = props.imgSrc;
   //  const imgAlt = props.imgAlt;
-  return <img className="img" src={imgSrc} alt={imgAlt} />;
+  return <img className={styles.img} src={imgSrc} alt={imgAlt} />;
 };
 
 export default RecipeImg;

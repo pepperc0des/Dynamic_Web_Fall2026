@@ -1,12 +1,14 @@
-const IntructionList = (props) => {
+import styles from "./RecipeCard.module.css";
+
+const InstructionsList = (props) => {
   const { instructions } = props;
   return (
-    <div className="instructions_list">
-      <h3 className="list_title">Instructions:</h3>
+    <div className={styles.instructions_list}>
+      <h3 className={styles.list_title}>Instructions:</h3>
       <ol>
         {instructions.map((step, index) => {
           return (
-            <li key={index} className="list_item">
+            <li key={index} className={styles.list_item}>
               {step}
             </li>
           );
@@ -16,4 +18,4 @@ const IntructionList = (props) => {
   );
 };
 
-export default IntructionList;
+export default InstructionsList;
