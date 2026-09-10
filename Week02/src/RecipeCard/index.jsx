@@ -1,9 +1,9 @@
 import { RECIPE_DATA } from "./recipe-data.js";
 import Card from "./Card.jsx";
-import RecipeImg from "./RecipeImg";
-import RecipeInfo from "./RecipeInfo";
-import IngredientsList from "./IngredientsList";
-import InstructionsList from "./InstructionsList";
+import RecipeImg from "./RecipeImg.jsx";
+import RecipeInfo from "./RecipeInfo.jsx";
+import IngredientsList from "./IngredientsList.jsx";
+import InstructionsList from "./InstructionsList.jsx";
 import "../global.css";
 const RecipeCard = () => {
   return (
