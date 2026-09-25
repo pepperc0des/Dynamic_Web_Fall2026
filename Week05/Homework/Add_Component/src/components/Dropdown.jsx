@@ -35,12 +35,20 @@ get fired when the component unmounts/destroyed off screen. This is usually a cl
       if (!divEl.current.contains(event.target)) setIsOpen(false);
     };
 
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    }
+
     document.addEventListener("click", handlerFunction);
+    document.addEventListener("keydown", handleKeyDown);
 
     // if useEffect returns a function, thats a cleanup function
     return () => {
       // remove that event listener
       document.removeEventListener("click", handlerFunction);
+      document.addEventListener("keydown", handleKeyDown);
     };
   }, []);
 

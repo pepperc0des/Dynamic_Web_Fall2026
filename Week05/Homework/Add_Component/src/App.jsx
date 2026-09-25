@@ -5,6 +5,7 @@ import DropdownPage from "./pages/DropdownPage";
 import Modal from "./pages/ModalPage";
 import NavBar from "./components/NavBar";
 import ModalPage from "./pages/ModalPage";
+import ThemePage from "./pages/ThemePage";
 
 // Right now App is doing the job of a page. Next week we add routes
 // so each of these gets its own url.
@@ -20,6 +21,8 @@ const App = () => {
           <Route path="/accordion" element={<AccordionPage />} />
           <Route path="/dropdown" element={<DropdownPage />} />
           <Route path="/Modal" element={<ModalPage />} />
+          {/* Homework: */}
+          <Route path="/Theme" element={<ThemePage/>} /> 
         </Routes>
       </div>
     </div>

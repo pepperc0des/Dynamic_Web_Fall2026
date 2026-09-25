@@ -13,3 +13,28 @@
 button > svg {
   margin-right: 0.25rem;
 }
+
+/* Homework: */
+:root {
+  --page-bg: #ffffff;
+  --surface-bg: #f3f4f6;
+  --text-color: ##0e0f0f;
+}
+
+:root[data-theme='dark'] {
+  --page-bg: #0e0f0f;
+  --surface-bg: ##0e0f0f;
+  --text-color: #f9fafb;
+}
+
+body {
+  background-color: var(--page-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card {
+  background-color: var(--surface-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
