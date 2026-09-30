@@ -20,9 +20,9 @@ const App = () => {
           <Route path="/" element={<ButtonPage />} />
           <Route path="/accordion" element={<AccordionPage />} />
           <Route path="/dropdown" element={<DropdownPage />} />
-          <Route path="/Modal" element={<ModalPage />} />
+          <Route path="/modal" element={<ModalPage />} />
           {/* Homework: */}
-          <Route path="/Theme" element={<ThemePage/>} /> 
+          <Route path="/theme" element={<ThemePage />} />
         </Routes>
       </div>
     </div>

@@ -18,12 +18,12 @@ button > svg {
 :root {
   --page-bg: #ffffff;
   --surface-bg: #f3f4f6;
-  --text-color: ##0e0f0f;
+  --text-color: #0e0f0f;
 }
 
 :root[data-theme='dark'] {
   --page-bg: #0e0f0f;
-  --surface-bg: ##0e0f0f;
+  --surface-bg: #0e0f0f;
   --text-color: #f9fafb;
 }
 
