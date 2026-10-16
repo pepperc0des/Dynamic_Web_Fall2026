@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Wake the hell up",
+      "done": true
+    },
+    {
+      "id": 2,
+      "title": "Read the week 06 notes",
+      "done": true
+    },
+    {
+      "title": "homework 1",
+      "done": false,
+      "id": 3
+    }
+  ]
+}
