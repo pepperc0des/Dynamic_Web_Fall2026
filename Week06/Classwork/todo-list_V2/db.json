@@ -1,0 +1,28 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Wake the hell up"
+    },
+    {
+      "id": 2,
+      "title": "Read the week 06 notes"
+    },
+    {
+      "title": "homework 1",
+      "id": 3
+    },
+    {
+      "title": "read ",
+      "id": 4
+    },
+    {
+      "title": "asd",
+      "id": 5
+    },
+    {
+      "title": "asd",
+      "id": 6
+    }
+  ]
+}
