@@ -1,0 +1,27 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Back squat",
+      "weight": 135,
+      "done": true
+    },
+    {
+      "id": 2,
+      "title": "Bench press",
+      "weight": 95,
+      "done": false
+    },
+    {
+      "id": 3,
+      "title": "Push-ups",
+      "weight": null,
+      "done": false
+    },
+    {
+      "id": 4,
+      "title": "Plank",
+      "done": false
+    }
+  ]
+}
