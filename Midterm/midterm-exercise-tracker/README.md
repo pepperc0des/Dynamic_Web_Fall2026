@@ -1,22 +1,21 @@
 # Lift Log
 
-A one-screen workout list. You add the exercises for today's session, each with
-the weight you lifted last time, then tick them off as you go. The number on
-the right of each row is the number to beat.
+A workout list where you add the exercises you need to do for today's session, each with
+the weight you lifted last time, then tick them off as you go.
 
-**Who it's for:** someone who lifts a few times a week and can never remember
-what weight they used last session. So, me.
+**Who it's for:** As someone who lifts a few times a week and haven't been as consistent as before, I can never remember
+what weight I did last session.
 
 ## User story
 
-> **As** someone who lifts a few times a week, **I want to** record the weight
-> I used last time for each exercise, **so that** I know what to beat next
-> session.
+> As someone who lifts a few times a week, I want to record the weight
+> I used for each exercise, so that I know what to do for the next
+> session and also helps me keep track of how I'm doing in terms of how much
+> weight I can lift.
 
 **The field it produced:** `weight`, a **number** input in pounds.
 
-- It's a number input because the story is about a number you compare
-  against, not a note.
+- It's a number input because the story is about a number you keep track of
 - A blank box means **bodyweight** (push-ups, pull-ups, plank). It's saved as
   `null`, not `0`, because "I lifted 0 lb" and "this exercise has no weight" are
   different things.
@@ -53,15 +52,13 @@ no other component cares. `TodoEdit` gets **props** (`todo`, `onSubmit`,
 
 ## Developer checklist (before I wrote any code)
 
-What I thought it would take to add the weight field:
-
 1. Add a number input to `TodoCreate` with `value` and `onChange`.
 2. Add `weight` to the POST body in `api.js`.
 3. Pass `weight` through `createTodo` in the Context.
 4. Show the weight in `TodoItem`.
 5. Add some weights to `db.json` to test with.
 
-## Revised checklist (what it actually took)
+## Revised checklist
 
 1. Fix the build first: `ToDoList.jsx` imported `"TodoItem"` instead of
    `"./ToDoItem"`, and `axios` wasn't in `package.json`.
@@ -91,7 +88,7 @@ What I thought it would take to add the weight field:
     `handleChange`, give every input a `name` that matches its key, and link
     every `label` to its input with `htmlFor` / `id`. Edit rows need unique ids
     (`edit-title-${todo.id}`).
-13. **Validation:** an empty name doesn't save, and a message *in words* appears
+13. **Validation:** an empty name doesn't save, and a message _in words_ appears
     under the field (not just a red border).
 14. **Don't clear the form until the save worked.** `createTodo` and
     `editTodoById` now return `true` / `false`, the create form only clears on
@@ -107,7 +104,7 @@ What I thought it would take to add the weight field:
 My first list had 5 steps and the real one had 16. What I forgot:
 
 - **The edit form.** I only planned for creating, but the story is about the
-  weight *changing*, so editing it matters most.
+  weight _changing_, so editing it matters most.
 - **PUT replaces the whole record.** Without `weight` in the PUT, renaming
   "Bench press" would have silently wiped its weight.
 - **Old rows in `db.json` don't have the field.** `undefined` needed to show
@@ -126,6 +123,5 @@ My first list had 5 steps and the real one had 16. What I forgot:
   natural payoff of the story.
 - **Sets and reps** as a second field, since weight alone isn't the whole
   workout.
-- **A "beat it" button** that bumps the weight up by 5 lb after a good session.
 - **History**, so I can see the weight climbing over time and not just the
   latest number.
