@@ -1,0 +1,46 @@
+### Test requests for Lift Log (needs `npm run server` running).
+### With the REST Client extension in VS Code, click "Send Request" above each one.
+
+### get every exercise
+GET http://localhost:3001/todos HTTP/1.1
+
+### create one with a weight -- the server gives it an id
+POST http://localhost:3001/todos HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Deadlift",
+  "weight": 185,
+  "done": false
+}
+
+### create a bodyweight one -- weight is null, not 0
+POST http://localhost:3001/todos HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Pull-ups",
+  "weight": null,
+  "done": false
+}
+
+### replace one (PUT replaces the WHOLE record -- leave weight out and it's gone)
+PUT http://localhost:3001/todos/2 HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Bench press",
+  "weight": 100,
+  "done": false
+}
+
+### change one field, leave the rest alone
+PATCH http://localhost:3001/todos/2 HTTP/1.1
+Content-Type: application/json
+
+{
+  "done": true
+}
+
+### delete one
+DELETE http://localhost:3001/todos/2 HTTP/1.1
