@@ -9,7 +9,7 @@ const SWATCH = {
 };
 
 const Catalog = () => {
-  // all this is doing is giving us direct access to store's dispatch function
+  // all ths is doing is giving us direct access to store's dispatch function
   // this is the SAME dispatch idea we met with useReducer, except this is one dispatch for the entire app
   const dispatch = useDispatch();
   return (
@@ -18,7 +18,7 @@ const Catalog = () => {
         {PRINTS.map((print) => {
           return (
             <li key={print.id} className="border-b-4 border-r-4 border-ink">
-              <div className={`h-28 ${SWATCH[print.colour]}`} />
+              <div className={`h-28 ${SWATCH[print.color]}`} />
 
               <div className="flex items-center justify-between gap-2 px-3 py-3">
                 <div>
@@ -26,7 +26,7 @@ const Catalog = () => {
                   <p className="text-xs">${print.price}</p>
                 </div>
 
-                {/* itemAdded(prints) does NOT change anything! it builds an action object, and dispatch is what sends it */}
+                {/* itemAdded(print)  does NOT change anything! it builds an action object, and dispatch is what sends it*/}
                 <button
                   className="border-4 border-ink bg-flat-yellow px-3 py-1 text-xs font-black uppercase"
                   onClick={() => dispatch(itemAdded(print))}

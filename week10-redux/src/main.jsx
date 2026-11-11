@@ -1,14 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 
+import App from "./App.jsx";
+import { store } from "./store.js";
 import "./index.css";
-import App from "./App";
-import { store } from "./store";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-// One provider, right at the top. Every component inside of it can reach the store
-// at any depth
+createRoot(document.getElementById("root")).render(
+  // One provider, right at the top. Every component inside of it can reach the store
+  // at any depth, without a single prop
   <Provider store={store}>
     <App />
   </Provider>,

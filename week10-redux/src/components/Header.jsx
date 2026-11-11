@@ -3,10 +3,10 @@ import { useSelector } from "react-redux";
 const Header = () => {
   // useSelector take a function and hands it the WHOLE ENTIRE store state
   // and it gives you back whatever the selector function returns
-  // This component re-renders ONLY when the value it picked out actually changes.
+  // This component re-renders ONLY when the value it picked out actually changes
   const items = useSelector((state) => state.cart.items);
-  const count = items.reduce((running, item) => running + item.quantity, 0);
 
+  const count = items.reduce((running, item) => running + item.quantity, 0);
   const total = items.reduce(
     (running, item) => running + item.quantity * item.price,
     0,
