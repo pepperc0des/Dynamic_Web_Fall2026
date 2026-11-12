@@ -5,7 +5,9 @@ import {
   addArt,
   removeArt,
   changeSearchTerm,
-} from "../features/artSlice.js";
+  selectVisibleArt,
+  selectTotalValue,
+} from "../features/artSlice";
 
 import { formReducer, changeName, changePrice } from "../features/formSlice";
 
@@ -16,4 +18,13 @@ const store = configureStore({
   },
 });
 
-export { store, changeName, changePrice, addArt, removeArt, changeSearchTerm };
+export {
+  store,
+  changeName,
+  changePrice,
+  addArt,
+  removeArt,
+  changeSearchTerm,
+  selectVisibleArt,
+  selectTotalValue,
+};

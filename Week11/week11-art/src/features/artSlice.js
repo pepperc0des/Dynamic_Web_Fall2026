@@ -1,4 +1,4 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { createSlice, createSelector, nanoid } from "@reduxjs/toolkit";
 
 const artSlice = createSlice({
   name: "art",
@@ -30,11 +30,37 @@ const artSlice = createSlice({
 
     // here we assume we receive the id of the item to delete via action.payload
     removeArt(state, action) {
-      state.data = state.data.at.filter((item) => item.id !== action.payload);
+      console.log(action.payload);
+      // remember that state here is just state.data, once out of this file its state.art.data
+      state.data = state.data.filter((item) => item.id !== action.payload);
     },
   },
 });
 
 export const { changeSearchTerm, addArt, removeArt } = artSlice.actions;
+
+// Selectors live next to the slice that owns the data, Both of these answer a question about the art
+// so this is where they belong, and it is the only file that knows the shape of state.art
+// export const selectVisibleArt = (state) =>
+//   state.art.data.filter((art) =>
+//     art.name.toLowerCase().includes(state.art.searchTerm.toLowerCase())
+//   )
+
+export const selectVisibleArt = createSelector(
+  // select and destructure out data, searchTerm
+  [(state) => state.art.data, (state) => state.art.searchTerm],
+
+  (data, searchTerm) =>
+    data.filter((art) =>
+      art.name.toLowerCase().includes(searchTerm.toLowerCase()),
+    ),
+);
+
+// export const selectTotalValue = (state) =>
+//   selectVisibleArt(state).reduce((running, art) => running + art.price, 0)
+
+export const selectTotalValue = createSelector([selectVisibleArt], (visible) =>
+  visible.reduce((running, art) => running + art.price, 0),
+);
 
 export const artReducer = artSlice.reducer;
